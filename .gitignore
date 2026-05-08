@@ -1,8 +1,9 @@
 # Session summaries (local progress tracking)
 session_*.md
 
-# Agent skills (local development tools)
+# Agent skills & Claude Code config (local development tools)
 .agents/skills/
+skills-lock.json
 
 # Python
 __pycache__/
