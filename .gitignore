@@ -1,5 +1,5 @@
-# Session summaries (local progress tracking)
-session_*.md
+# Project tracker (local progress tracking - not for GitHub)
+PROJECT_TRACKER.md
 
 # Agent skills & Claude Code config (local development tools)
 .agents/skills/
