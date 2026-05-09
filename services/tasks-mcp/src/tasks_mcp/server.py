@@ -303,8 +303,21 @@ async def tasks_delete(params: TasksDeleteInput) -> str:
 # =============================================================================
 
 def main():
-    """Run the MCP server with streamable HTTP transport."""
-    mcp.run(transport="streamable-http")
+    """Run the MCP server with streamable HTTP transport.
+
+    Uses uvicorn directly to allow host/port configuration for Docker.
+    Defaults to 0.0.0.0:8000 to allow connections from outside container.
+    """
+    import os
+    import uvicorn
+
+    host = os.getenv("MCP_HOST", "0.0.0.0")
+    port = int(os.getenv("MCP_PORT", "8000"))
+
+    # Get the ASGI app from FastMCP for streamable-http transport
+    app = mcp.streamable_http_app()
+
+    uvicorn.run(app, host=host, port=port)
 
 
 if __name__ == "__main__":
