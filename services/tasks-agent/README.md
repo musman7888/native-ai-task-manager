@@ -37,3 +37,4 @@ uv run tasks-agent
 - Tasks MCP Server running at `http://localhost:8000`
 - Python 3.12+
 - uv package manager
+# Trigger CI
